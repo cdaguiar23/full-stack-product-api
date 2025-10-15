@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,5 +54,25 @@ public class ProdutoController {
     public ResponseEntity<ProdutoDTO> atualizarProduto(@PathVariable Long id, @Valid @RequestBody ProdutoDTO dto) {
         ProdutoDTO produto = service.atualizarProduto(id, dto);
         return ResponseEntity.ok(produto);
+    }
+
+    // DELETE - Soft delete by default
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        boolean deleted = service.deletarLogico(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    // DELETE FÍSICO
+    @DeleteMapping("/{id}/hard")
+    public ResponseEntity<String> deletarFisicamente(@PathVariable Long id) {
+        boolean deleted = service.deletarFisico(id);
+        if (!deleted) {
+            return ResponseEntity.ok("Produto não encontrado");
+        }
+        return ResponseEntity.ok("Produto deletado permanentemente");
     }
 }

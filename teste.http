@@ -28,5 +28,8 @@ Content-Type: application/json
     "descricao": "Acesso remoto ao notebook",
     "responsavel": "Claudionei de Aguiar",
     "tipoCategoria": "Acessórios",
-    "ativo": true
+    "ativo": false
 }
+
+###
+DELETE http://localhost:8080/api/produtos/6/hard

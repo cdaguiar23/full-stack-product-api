@@ -1,6 +1,7 @@
 package com.productmanager.produto.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,29 @@ public class ProdutoService {
         return convertToDTO(updatedProduto);
     }
 
+    
+    // DELETE - Soft delete (lógica)
+    public boolean deletarLogico(Long id) {
+        Optional<Produto> optional = repository.findById(id);
+        if (optional.isPresent()) {
+            Produto produto = optional.get();
+            produto.setAtivo(false);
+            repository.save(produto);
+            return true;
+        }
+        return false;
+    }
+    
+    // DELETE FÍSICO
+    public boolean deletarFisico(Long id) {
+        try {
+            repository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
      // Helper method
      private ProdutoDTO convertToDTO(Produto produto) {
         ProdutoDTO dto = new ProdutoDTO();
@@ -69,7 +93,4 @@ public class ProdutoService {
         dto.setAtivo(produto.getAtivo());
         return dto;
     }
-
-    //
 }
-
