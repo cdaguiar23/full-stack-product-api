@@ -1,8 +1,15 @@
 package com.productmanager.produto.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProdutoDTO {
     private Long id;
     
@@ -14,26 +21,4 @@ public class ProdutoDTO {
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
     private String tipoCategoria;
-    
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
-    
-    public String getResponsavel() { return responsavel; }
-    public void setResponsavel(String responsavel) { this.responsavel = responsavel; }
-    
-    public LocalDateTime getDataCriacao() { return dataCriacao; }
-    public void setDataCriacao(LocalDateTime dataCriacao) { this.dataCriacao = dataCriacao; }
-    
-    public LocalDateTime getDataModificacao() { return dataModificacao; }
-    public void setDataModificacao(LocalDateTime dataModificacao) { this.dataModificacao = dataModificacao; }
-    
-    public String getTipoCategoria() { return tipoCategoria; }
-    public void setTipoCategoria(String tipoCategoria) { this.tipoCategoria = tipoCategoria; }
 }
