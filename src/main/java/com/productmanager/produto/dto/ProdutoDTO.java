@@ -14,7 +14,6 @@ public class ProdutoDTO {
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
     private String tipoCategoria;
-    private Boolean ativo;
     
     // Getters and Setters
     public Long getId() { return id; }
@@ -37,7 +36,4 @@ public class ProdutoDTO {
     
     public String getTipoCategoria() { return tipoCategoria; }
     public void setTipoCategoria(String tipoCategoria) { this.tipoCategoria = tipoCategoria; }
-    
-    public Boolean getAtivo() { return ativo; }
-    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
 }

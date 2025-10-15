@@ -56,16 +56,6 @@ public class ProdutoController {
         return ResponseEntity.ok(produto);
     }
 
-    // DELETE - Soft delete by default
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        boolean deleted = service.deletarLogico(id);
-        if (deleted) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
-    }
-
     // DELETE FÍSICO
     @DeleteMapping("/{id}/hard")
     public ResponseEntity<String> deletarFisicamente(@PathVariable Long id) {

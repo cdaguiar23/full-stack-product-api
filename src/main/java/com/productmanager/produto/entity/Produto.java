@@ -30,9 +30,6 @@ public class Produto {
     @Column(name = "tipo_categoria")
     private String tipoCategoria;
     
-    @Column(name = "ativo")
-    private Boolean ativo = true;
-    
     @PrePersist
     protected void onCreate() {
         dataCriacao = LocalDateTime.now();
@@ -65,8 +62,5 @@ public class Produto {
     
     public String getTipoCategoria() { return tipoCategoria; }
     public void setTipoCategoria(String tipoCategoria) { this.tipoCategoria = tipoCategoria; }
-    
-    public Boolean getAtivo() { return ativo; }
-    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
 }
 

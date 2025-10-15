@@ -39,7 +39,6 @@ public class ProdutoService {
         produto.setDescricao(dto.getDescricao());
         produto.setResponsavel(dto.getResponsavel());
         produto.setTipoCategoria(dto.getTipoCategoria());
-        produto.setAtivo(dto.getAtivo());
         Produto savedProduto = repository.save(produto);
         return convertToDTO(savedProduto);
     }
@@ -52,24 +51,10 @@ public class ProdutoService {
         produto.setDescricao(dto.getDescricao());
         produto.setResponsavel(dto.getResponsavel());
         produto.setTipoCategoria(dto.getTipoCategoria());
-        produto.setAtivo(dto.getAtivo());
         Produto updatedProduto = repository.save(produto);
         return convertToDTO(updatedProduto);
     }
 
-    
-    // DELETE - Soft delete (lógica)
-    public boolean deletarLogico(Long id) {
-        Optional<Produto> optional = repository.findById(id);
-        if (optional.isPresent()) {
-            Produto produto = optional.get();
-            produto.setAtivo(false);
-            repository.save(produto);
-            return true;
-        }
-        return false;
-    }
-    
     // DELETE FÍSICO
     public boolean deletarFisico(Long id) {
         try {
@@ -90,7 +75,6 @@ public class ProdutoService {
         dto.setDataCriacao(produto.getDataCriacao());
         dto.setDataModificacao(produto.getDataModificacao());
         dto.setTipoCategoria(produto.getTipoCategoria());
-        dto.setAtivo(produto.getAtivo());
         return dto;
     }
 }

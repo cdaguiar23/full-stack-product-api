@@ -6,7 +6,6 @@ CREATE TABLE IF NOT EXISTS produtos (
     data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     data_modificacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     tipo_categoria VARCHAR(100),
-    ativo BOOLEAN NOT NULL DEFAULT true,
     CONSTRAINT uk_nome UNIQUE (nome),
     CONSTRAINT chk_nome_not_empty CHECK (nome != '')
 );

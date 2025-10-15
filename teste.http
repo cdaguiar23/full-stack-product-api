@@ -14,8 +14,7 @@ Content-Type: application/json
     "nome": "Teclado Bluetooth",
     "descricao": "Acesso remoto ao computador",
     "responsavel": "Claudionei",
-    "tipoCategoria": "Acessórios",
-    "ativo": false
+    "tipoCategoria": "Acessórios"
 }
 
 ###
@@ -27,8 +26,7 @@ Content-Type: application/json
     "nome": "Teclado Wireless",
     "descricao": "Acesso remoto ao notebook",
     "responsavel": "Claudionei de Aguiar",
-    "tipoCategoria": "Acessórios",
-    "ativo": false
+    "tipoCategoria": "Acessórios"
 }
 
 ###
