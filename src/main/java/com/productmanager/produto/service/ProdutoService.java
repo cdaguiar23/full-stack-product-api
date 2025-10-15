@@ -24,6 +24,13 @@ public class ProdutoService {
                 .collect(Collectors.toList());
     }
 
+    // Listar os produtos por id
+     public ProdutoDTO listarPorId(Long id) {
+        Produto produto = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado"));
+        return convertToDTO(produto);
+    }
+
      // Helper method
      private ProdutoDTO convertToDTO(Produto produto) {
         ProdutoDTO dto = new ProdutoDTO();
@@ -37,5 +44,7 @@ public class ProdutoService {
         dto.setAtivo(produto.getAtivo());
         return dto;
     }
+
+    //
 }
 
