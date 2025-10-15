@@ -17,3 +17,16 @@ Content-Type: application/json
     "tipoCategoria": "Acessórios",
     "ativo": false
 }
+
+###
+PUT http://localhost:8080/api/produtos/6
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nome": "Teclado Wireless",
+    "descricao": "Acesso remoto ao notebook",
+    "responsavel": "Claudionei de Aguiar",
+    "tipoCategoria": "Acessórios",
+    "ativo": true
+}

@@ -43,6 +43,19 @@ public class ProdutoService {
         return convertToDTO(savedProduto);
     }
 
+    //Atualiza produto
+    public ProdutoDTO atualizarProduto(Long id, ProdutoDTO dto) {
+        Produto produto = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado"));
+        produto.setNome(dto.getNome());
+        produto.setDescricao(dto.getDescricao());
+        produto.setResponsavel(dto.getResponsavel());
+        produto.setTipoCategoria(dto.getTipoCategoria());
+        produto.setAtivo(dto.getAtivo());
+        Produto updatedProduto = repository.save(produto);
+        return convertToDTO(updatedProduto);
+    }
+
      // Helper method
      private ProdutoDTO convertToDTO(Produto produto) {
         ProdutoDTO dto = new ProdutoDTO();

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,5 +46,12 @@ public class ProdutoController {
     public ResponseEntity<ProdutoDTO> criarProduto(@Valid @RequestBody ProdutoDTO dto) {
         ProdutoDTO produto = service.criarProduto(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+    }
+
+     // Atualizar um produto
+    @PutMapping("/{id}")
+    public ResponseEntity<ProdutoDTO> atualizarProduto(@PathVariable Long id, @Valid @RequestBody ProdutoDTO dto) {
+        ProdutoDTO produto = service.atualizarProduto(id, dto);
+        return ResponseEntity.ok(produto);
     }
 }
