@@ -31,6 +31,18 @@ public class ProdutoService {
         return convertToDTO(produto);
     }
 
+    // Criar um produto
+     public ProdutoDTO criarProduto(ProdutoDTO dto) {
+        Produto produto = new Produto();
+        produto.setNome(dto.getNome());
+        produto.setDescricao(dto.getDescricao());
+        produto.setResponsavel(dto.getResponsavel());
+        produto.setTipoCategoria(dto.getTipoCategoria());
+        produto.setAtivo(dto.getAtivo());
+        Produto savedProduto = repository.save(produto);
+        return convertToDTO(savedProduto);
+    }
+
      // Helper method
      private ProdutoDTO convertToDTO(Produto produto) {
         ProdutoDTO dto = new ProdutoDTO();

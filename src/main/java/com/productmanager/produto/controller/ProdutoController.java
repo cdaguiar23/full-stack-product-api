@@ -39,5 +39,11 @@ public class ProdutoController {
         ProdutoDTO produto = service.listarPorId(id);
         return ResponseEntity.ok(produto);
     }
-  
+    
+     // Criar um produto
+    @PostMapping
+    public ResponseEntity<ProdutoDTO> criarProduto(@Valid @RequestBody ProdutoDTO dto) {
+        ProdutoDTO produto = service.criarProduto(dto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+    }
 }
