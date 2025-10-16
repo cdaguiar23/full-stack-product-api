@@ -13,4 +13,12 @@
         <sqlFile path="V2__Insert_sample_produtos.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="3" author="productmanager">
+        <sqlFile path="V3__Create_users_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="4" author="productmanager">
+        <sqlFile path="V4__Insert_sample_users.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>

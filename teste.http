@@ -19,7 +19,7 @@ Accept: application/json
 ###
 
 # 4. Buscar produto por ID (exemplo com ID 3 - Monitor Samsung)
-GET http://localhost:8080/api/produtos/3
+GET http://localhost:8080/api/produtos/4
 Accept: application/json
 
 ###
@@ -39,7 +39,7 @@ Content-Type: application/json
 ###
 
 # 6. Atualizar um produto existente (exemplo com ID 1)
-PUT http://localhost:8080/api/produtos/1
+PUT http://localhost:8080/api/produtos/6
 Accept: application/json
 Content-Type: application/json
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 ###
 
 # 7. Deletar um produto fisicamente (exemplo com ID 10 - Webcam Logitech)
-DELETE http://localhost:8080/api/produtos/10/hard
+DELETE http://localhost:8080/api/produtos/12/hard
 
 ###
 

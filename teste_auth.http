@@ -1,0 +1,58 @@
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+### Register User
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "password": "testpass",
+    "role": "USER"
+}
+
+### List Users (requires auth)
+GET http://localhost:8080/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MDYyMTk2NCwiZXhwIjoxNzYwNjU3OTY0fQ.dVDf7HTylm9p2N-XxdNiBg_loIsGRkt0AHZOZDSwGV0
+
+### List Products (requires auth)
+GET http://localhost:8080/api/produtos
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MDYyMTk2NCwiZXhwIjoxNzYwNjU3OTY0fQ.dVDf7HTylm9p2N-XxdNiBg_loIsGRkt0AHZOZDSwGV0
+
+### Get Product by ID (requires auth)
+GET http://localhost:8080/api/produtos/1
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Create Product (requires auth)
+POST http://localhost:8080/api/produtos
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+Content-Type: application/json
+
+{
+    "nome": "Teclado Bluetooth",
+    "descricao": "Acesso remoto ao computador",
+    "responsavel": "Claudionei",
+    "tipoCategoria": "Acessórios"
+}
+
+### Update Product (requires auth)
+PUT http://localhost:8080/api/produtos/1
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+Content-Type: application/json
+
+{
+    "nome": "Teclado Wireless",
+    "descricao": "Acesso remoto ao notebook",
+    "responsavel": "Claudionei de Aguiar",
+    "tipoCategoria": "Acessórios"
+}
+
+### Delete Product (requires auth)
+DELETE http://localhost:8080/api/produtos/1/hard
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
