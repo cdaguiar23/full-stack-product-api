@@ -1,11 +1,30 @@
+# Testes dos Endpoints da API de Produtos
+
+# 1. Listar todos os produtos
 GET http://localhost:8080/api/produtos
 Accept: application/json
 
 ###
-GET http://localhost:8080/api/produtos/4
+
+# 2. Buscar produto por ID (exemplo com ID 1 - Notebook Dell)
+GET http://localhost:8080/api/produtos/2
 Accept: application/json
 
 ###
+
+# 3. Buscar produto por ID (exemplo com ID 2 - Mouse Logitech)
+GET http://localhost:8080/api/produtos/3
+Accept: application/json
+
+###
+
+# 4. Buscar produto por ID (exemplo com ID 3 - Monitor Samsung)
+GET http://localhost:8080/api/produtos/3
+Accept: application/json
+
+###
+
+# 5. Criar um novo produto
 POST http://localhost:8080/api/produtos
 Accept: application/json
 Content-Type: application/json
@@ -18,16 +37,46 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/api/produtos/6
+
+# 6. Atualizar um produto existente (exemplo com ID 1)
+PUT http://localhost:8080/api/produtos/1
 Accept: application/json
 Content-Type: application/json
 
 {
-    "nome": "Teclado Wireless",
-    "descricao": "Acesso remoto ao notebook",
-    "responsavel": "Claudionei de Aguiar",
-    "tipoCategoria": "Acessórios"
+    "nome": "Notebook Dell Atualizado",
+    "descricao": "Notebook para desenvolvimento com SSD",
+    "responsavel": "João Silva",
+    "tipoCategoria": "Eletrônicos"
 }
 
 ###
-DELETE http://localhost:8080/api/produtos/6/hard
+
+# 7. Deletar um produto fisicamente (exemplo com ID 10 - Webcam Logitech)
+DELETE http://localhost:8080/api/produtos/10/hard
+
+###
+
+# 8. Criar outro produto de exemplo
+POST http://localhost:8080/api/produtos
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nome": "Roteador Wi-Fi",
+    "descricao": "Roteador de alta velocidade",
+    "responsavel": "Carlos Santos",
+    "tipoCategoria": "Redes"
+}
+
+###
+
+# 9. Buscar produto recém-criado (ajuste o ID conforme necessário)
+GET http://localhost:8080/api/produtos/11
+Accept: application/json
+
+###
+
+# 10. Listar todos os produtos novamente para ver as mudanças
+GET http://localhost:8080/api/produtos
+Accept: application/json
