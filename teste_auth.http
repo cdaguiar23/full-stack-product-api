@@ -23,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MDYyM
 
 ### List Products (requires auth)
 GET http://localhost:8080/api/produtos
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MDYyMTk2NCwiZXhwIjoxNzYwNjU3OTY0fQ.dVDf7HTylm9p2N-XxdNiBg_loIsGRkt0AHZOZDSwGV0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MDY0NDA3OSwiZXhwIjoxNzYwNjgwMDc5fQ.wPNmiznURsFxWRqhRHLSmr4GXC3FylYwXn64uYQGVzE
 
 ### Get Product by ID (requires auth)
 GET http://localhost:8080/api/produtos/1
