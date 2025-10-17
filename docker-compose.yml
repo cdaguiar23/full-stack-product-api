@@ -15,6 +15,20 @@ services:
     networks:
       - productmanager_network
 
+  app:
+    build: .
+    container_name: productmanager-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/produtos_db
+      SPRING_DATASOURCE_USERNAME: postgresuser
+      SPRING_DATASOURCE_PASSWORD: postgrespass
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - productmanager_network
+
 volumes:
   postgres_data:
 
